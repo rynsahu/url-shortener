@@ -1,8 +1,14 @@
-function LinksPage() {
+import MainPage from "@/components/common/MainPage";
+
+const LinksPage = () => {
   return (
-    <div>
-      Links Page
-    </div>
+    <MainPage 
+      heading="Links"
+      subHeading="You can create 1000 more links this month."
+      actionBtn={{ label: 'Create Link' }}
+    >
+      <p>Body</p>
+    </MainPage>
   );
 }
 

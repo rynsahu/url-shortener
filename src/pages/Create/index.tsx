@@ -1,15 +1,15 @@
 import MainPage from "@/components/common/MainPage";
 
-const AnalyticsPage = () => {
+const CreatePage = () => {
   return (
     <MainPage 
-      heading="Analytics"
+      heading="Create a link"
       subHeading="You can create 1000 more links this month."
-      actionBtn={{ label: 'Create Link' }}
+      actionBtn={{ label: 'Home' }}
     >
       <p>Body</p>
     </MainPage>
   );
 }
-
-export default AnalyticsPage;
+ 
+export default CreatePage;

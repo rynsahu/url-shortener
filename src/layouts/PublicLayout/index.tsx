@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 
-function PublicLayout() {
+const PublicLayout = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1>Public Layout</h1>
+    <div className="public_layout">
+      <h1>Public route</h1>
       <Outlet />
     </div>
   );

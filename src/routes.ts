@@ -6,17 +6,20 @@ import PrivateLayout from './layouts/PrivateLayout';
 import HomePage from './pages/Home';
 import AnalyticsPage from './pages/Analytics';
 import LinksPage from './pages/Links';
+import RootLayout from './layouts/RootLayout';
+import CreatePage from './pages/Create';
 
 const router = createBrowserRouter([
   {
     path: '/',
+    Component: RootLayout,
     children: [
       // Public routes are accessible to non-logged-in users.
       {
         Component: PublicLayout,
         children: [
           { index: true, Component: LandingPage },
-          { path: 'signUp',  Component: SignUpPage }
+          { path: 'sign-up',  Component: SignUpPage }
         ],
       },
       // Privates routes are only accessible to logged-in users.
@@ -25,7 +28,13 @@ const router = createBrowserRouter([
         children: [
           { path: 'home', Component: HomePage },
           { path: 'analytics', Component: AnalyticsPage },
-          { path: '/links', Component: LinksPage },
+          { 
+            path: 'links', 
+            children: [
+              { index: true, Component: LinksPage },
+              { path: 'create', Component: CreatePage }
+            ] 
+          },
         ],
       },
       // Show 404 page if no routes match.
