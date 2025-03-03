@@ -9,9 +9,9 @@ const SideNavBody = () => {
           <li key={item.label}>
             <NavLink 
               to={item.path}
-              className={({ isActive }) => `py-1 px-2 flex items-center hover:bg-zinc-100 rounded-md ${isActive ? 'bg-zinc-100' : '' }`}
+              className={({ isActive }) => `py-1 px-2 flex items-center hover:bg-zinc-100 rounded-md ${isActive ? 'bg-zinc-100 font-semibold' : 'text-zinc-500' }`}
             >
-              <span>{item.label}</span>
+              <span className="text-[inherit]">{item.label}</span>
             </NavLink>
           </li>
         ))}

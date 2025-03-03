@@ -1,4 +1,4 @@
-import MainPage from "@/components/common/MainPage";
+import MainPage from "@/components/common/PrivatePageContainer";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
@@ -10,7 +10,7 @@ const HomePage = () => {
       subHeading="You can create 1000 more links this month."
       actionBtn={{ 
         label: 'Create Link',
-        handleActionBtnClick: () => navigate('/links/create')
+        onActionBtnClick: () => navigate('/links/create')
       }}
     >
       <p>Body</p>

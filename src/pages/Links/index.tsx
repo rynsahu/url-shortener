@@ -1,4 +1,4 @@
-import MainPage from "@/components/common/MainPage";
+import MainPage from "@/components/common/PrivatePageContainer";
 
 const LinksPage = () => {
   return (

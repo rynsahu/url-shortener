@@ -1,20 +1,22 @@
-import MainPage from "@/components/common/MainPage";
+import PrivatePageContainer from "@/components/common/PrivatePageContainer";
+import CreateLink from "@/components/Forms/CreateLink";
 import { useNavigate } from "react-router-dom";
 
 const CreatePage = () => {
   const navigate = useNavigate();
 
   return (
-    <MainPage 
+    <PrivatePageContainer 
       heading="Create a link"
       subHeading="You can create 1000 more links this month."
+      size="md"
       actionBtn={{ 
         label: 'Home',
-        handleActionBtnClick: () => navigate('/home')
+        onActionBtnClick: () => navigate('/home')
       }}
     >
-      <p>Body</p>
-    </MainPage>
+        <CreateLink />
+    </PrivatePageContainer>
   );
 }
  

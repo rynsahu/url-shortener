@@ -11,15 +11,12 @@ const PrivateLayout = () => {
       </aside>
       {/* ----- */}
       <main className="flex flex-col w-full">
-        <header className="px-4 py-5">
+        <header className="px-4 py-5 border-b border-zinc-200">
           <PrivateHeader />
         </header>
-        {/* ------ */}
-        <section className="main_content">
-          <div className="relative flex flex-col max-w-[1154px] min-h-[calc(100vh-60px)] mx-auto px-4">
-            {/* Page content */}
-            <Outlet />
-          </div>
+        {/* Page content */}
+        <section className="main_content relative w-full flex flex-col min-h-[calc(100vh-61px)] mx-auto">
+          <Outlet />
         </section>
       </main>
       {/* ----- */}
