@@ -1,4 +1,4 @@
-import AppLogo from "@/components/common/AppLogo";
+import AppLogo from "@/components/AppLogo";
 import { Link } from "react-router-dom";
  
 const SideNavHeader = () => {

@@ -1,4 +1,4 @@
-import MainPage from "@/components/common/PrivatePageContainer";
+import MainPage from "@/components/ui/common/PrivatePageContainer";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {

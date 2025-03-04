@@ -1,5 +1,5 @@
-import PrivatePageContainer from "@/components/common/PrivatePageContainer";
-import CreateLink from "@/components/Forms/CreateLink";
+import PrivatePageContainer from "@/components/ui/common/PrivatePageContainer";
+import CreateLink from "@/components/Forms/CreateLinkForm";
 import { useNavigate } from "react-router-dom";
 
 const CreatePage = () => {

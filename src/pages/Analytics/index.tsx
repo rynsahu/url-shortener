@@ -1,4 +1,4 @@
-import MainPage from "@/components/common/PrivatePageContainer";
+import MainPage from "@/components/ui/common/PrivatePageContainer";
 
 const AnalyticsPage = () => {
   return (

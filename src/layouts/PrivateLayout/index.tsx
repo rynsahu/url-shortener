@@ -1,5 +1,5 @@
-import PrivateHeader from "@/components/Header/PrivateHeader";
-import SideNav from "@/components/SideNav";
+import PrivateHeader from "@/components/ui/common/Header/PrivateHeader";
+import SideNav from "@/components/ui/common/SideNav";
 import { Outlet } from "react-router-dom";
 
 const PrivateLayout = () => {
