@@ -1,20 +1,27 @@
-import MainPage from "@/components/ui/common/PrivatePageContainer";
+import PrivatePageContainer from "@/components/ui/common/PrivatePageContainer";
+import { useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const navigate = useNavigate();
 
+  const handleCreateLinkClick = useCallback(() => {
+    navigate('/links/create');
+  }, [navigate]);
+
+  const actionBtn = useMemo(() => ({
+    label: 'Create Link',
+    onActionBtnClick: handleCreateLinkClick
+  }), [handleCreateLinkClick]);
+
   return (
-    <MainPage 
+    <PrivatePageContainer 
       heading="Home"
       subHeading="You can create 1000 more links this month."
-      actionBtn={{ 
-        label: 'Create Link',
-        onActionBtnClick: () => navigate('/links/create')
-      }}
+      actionBtn={actionBtn}
     >
-      <p>Body</p>
-    </MainPage>
+      <div>Body</div>
+    </PrivatePageContainer>
   );
 }
 

@@ -1,6 +1,7 @@
 import SideNavHeader from "./SideNavHeader";
 import SideNavFooter from "./SideNavFooter";
 import SideNavBody from "./SideNavBody";
+import React from "react";
 
 const SideNav: React.FC = () => {
   return (
@@ -12,4 +13,4 @@ const SideNav: React.FC = () => {
   );
 }
 
-export default SideNav;
+export default React.memo(SideNav);

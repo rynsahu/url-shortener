@@ -1,4 +1,5 @@
 import { ChevronRight, PanelLeft } from "lucide-react";
+import React from "react";
 import { Fragment } from "react/jsx-runtime";
 
 const PrivateHeader = () => {
@@ -22,4 +23,4 @@ const PrivateHeader = () => {
   );
 }
  
-export default PrivateHeader;
+export default React.memo(PrivateHeader);

@@ -19,9 +19,9 @@ const CONTAINER_SIZE_CLASS: Record<ContainerSize, string> = {
   xl: 'max-w-[1280px] mx-auto',
 }
 
-const PrivatePageContainer: React.FC<PrivatePageContainerProps> = ({ children, heading, subHeading, actionBtn, size }) => {
-  const containerSizeClass = CONTAINER_SIZE_CLASS[size || 'xl'] || '';
-
+const PrivatePageContainer: React.FC<PrivatePageContainerProps> = ({ children, heading, subHeading, actionBtn, size = 'xl' }) => {
+  const containerSizeClass = CONTAINER_SIZE_CLASS[size];
+  
   return (
     <div className={`flex flex-col gap-6 px-4 w-full ${containerSizeClass} my-7`}>
       <section className="flex flex-col gap-2">
@@ -42,4 +42,4 @@ const PrivatePageContainer: React.FC<PrivatePageContainerProps> = ({ children, h
   );
 }
 
-export default PrivatePageContainer;
+export default React.memo(PrivatePageContainer);
