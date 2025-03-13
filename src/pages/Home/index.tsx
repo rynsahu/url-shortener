@@ -6,11 +6,11 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const handleCreateLinkClick = useCallback(() => {
-    navigate('/links/create');
+    navigate('/links');
   }, [navigate]);
 
   const actionBtn = useMemo(() => ({
-    label: 'Create Link',
+    label: 'Links',
     onActionBtnClick: handleCreateLinkClick
   }), [handleCreateLinkClick]);
 
