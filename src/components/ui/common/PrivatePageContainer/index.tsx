@@ -25,7 +25,7 @@ const PrivatePageContainer: React.FC<PrivatePageContainerProps> = ({ children, h
   return (
     <div className={`flex flex-col gap-6 px-4 w-full ${containerSizeClass} my-7`}>
       <section className="flex flex-col gap-2">
-        <div className="flex justify-between items-center">
+        <div className="flex gap-3 justify-between items-center">
           <h1 className="text-3xl font-bold">{heading}</h1>
           {actionBtn && (
             <Button onClick={actionBtn?.onActionBtnClick}>
