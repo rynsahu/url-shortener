@@ -7,7 +7,7 @@ interface FormFieldProps {
  
 const FormField: React.FC<FormFieldProps> = ({ children, label, subText, name }) => {
   return (
-    <div className="flex flex-col gap-1 w-full text-sm">
+    <div className="flex flex-col gap-2 w-full text-sm">
       {label && (
         <label className="flex gap-1 items-center" htmlFor={name}>
           <span className={subText ? 'font-semibold' : ''}>{label}</span>
