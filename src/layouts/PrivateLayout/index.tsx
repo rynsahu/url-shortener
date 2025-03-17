@@ -6,9 +6,9 @@ const PrivateLayout = () => {
   return (
     <div className="private_layout flex">
       {/* ----- */}
-      <aside>
+      <section>
         <SideNav />
-      </aside>
+      </section>
       {/* ----- */}
       <main className="flex flex-col w-full">
         <header className="px-4 py-5 border-b border-zinc-200">

@@ -1,14 +1,14 @@
-import MainPage from "@/components/ui/common/PrivatePageContainer";
+import PrivatePageContainer from "@/components/ui/common/PrivatePageContainer";
 
 const AnalyticsPage = () => {
   return (
-    <MainPage 
+    <PrivatePageContainer 
       heading="Analytics"
       subHeading="You can create 1000 more links this month."
       actionBtn={{ label: 'Create Link' }}
     >
       <p>Body</p>
-    </MainPage>
+    </PrivatePageContainer>
   );
 }
 

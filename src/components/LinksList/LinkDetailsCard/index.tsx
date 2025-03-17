@@ -6,13 +6,13 @@ import React from "react";
 
 const LinkDetailsCard = () => {
   return (
-    <div className='flex gap-3 border border-zinc-200 p-4 rounded-lg w-full'>
+    <div className='flex gap-3 border border-zinc-200 p-6 rounded-lg w-full'>
       {/* Icon */}
-      <div className='flex border border-zinc-200 rounded-full h-[30px] lg:h-[35px] w-[30px] lg:w-[35px] p-1 flex justify-center items-center'>
+      <section className='flex border border-zinc-200 rounded-full h-[30px] lg:h-[35px] w-[30px] lg:w-[35px] p-1 flex justify-center items-center'>
         <Earth size={36} />
-      </div>
+      </section>
       {/* Content */}
-      <div className='flex-1 flex flex-col gap-2 text-sm'>
+      <section className='flex-1 flex flex-col gap-2 text-sm'>
         <div className='flex gap-3 justify-between'>
           <Link
             to='/link/1'
@@ -41,7 +41,7 @@ const LinkDetailsCard = () => {
         <LinkAnalytics />
 
         <LinkAction className='lg:hidden mt-5' />
-      </div>
+      </section>
     </div>
   );
 };
