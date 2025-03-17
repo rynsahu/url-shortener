@@ -24,9 +24,9 @@ const CreateLinkForm: React.FC<CreateLinkFormProps> = () => {
 
       <p className="font-bold text-xl">Short link</p>
 
-      <div className="flex flex-col lg:flex-row space-between gap-5 items-center w-full">
+      <div className="flex flex-col lg:flex-row space-between gap-4 items-center w-full">
         <FormField name="destination" label="Destination">
-          <Input name="destination" value="shortly.aryansahu.com" disabled />
+          <Input name="destination" value="shortly.aryansahu.com" className="bg-zinc-200" disabled />
         </FormField>
 
         <span className="mt-6 hidden lg:block">/</span>
