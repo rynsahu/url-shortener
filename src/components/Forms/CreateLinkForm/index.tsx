@@ -66,7 +66,7 @@ const CreateLinkForm: React.FC<CreateLinkFormProps> = () => {
 
       <div className="flex gap-4 w-full mt-2">
         <Button type="button" variant='outline' className="ml-auto">Cancel</Button>
-        <Button type="submit" disabled={isPending} isLoading={isPending} >Create your link</Button>
+        <Button type="submit" isLoading={isPending} >Create your link</Button>
       </div>
     </form>
   );
