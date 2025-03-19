@@ -1,7 +1,7 @@
 interface FormFieldProps {
   children: React.ReactElement;
   label?: string | React.ReactElement;
-  name?: string;
+  name: string;
   subText?: string;
 }
  
