@@ -15,7 +15,7 @@ const PrivateLayout = () => {
           <PrivateHeader />
         </header>
         {/* Page content */}
-        <section className="main_content relative w-full flex flex-col min-h-[calc(100vh-61px)] mx-auto">
+        <section className="main_content relative w-full flex flex-col h-[calc(100vh-61px)] mx-auto overflow-y-auto">
           <Outlet />
         </section>
       </main>
