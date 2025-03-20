@@ -1,3 +1,4 @@
+import { SHORT_URL_HOST } from "@/constants/navigation"
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
@@ -19,3 +20,10 @@ export const generateHashId = (length = 7): string => {
 
   return id;
 }
+
+export const getShortUrl = (shortUrlId: string) => {
+  return { 
+    label: `${SHORT_URL_HOST}/${shortUrlId}`, 
+    url: `https://${SHORT_URL_HOST}/${shortUrlId}`
+  };
+};

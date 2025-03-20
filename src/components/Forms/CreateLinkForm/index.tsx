@@ -5,18 +5,16 @@ import React, { useActionState, useEffect } from "react";
 import { createLink } from "./actions";
 import { CREATE_LINK_FORM_FIELD, CreateLinkActionState } from "./types";
 import { toast } from "sonner";
-
-interface CreateLinkFormProps {
-  pen?: string;
-}
+import { useNavigate } from "react-router-dom";
 
 const formInitialValues: CreateLinkActionState = {
   success: false,
   error: null
 }
  
-const CreateLinkForm: React.FC<CreateLinkFormProps> = () => {
+const CreateLinkForm = () => {
   const [state, createLinkAction, isPending] = useActionState<CreateLinkActionState, FormData>(createLink, formInitialValues);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (state.error) {
@@ -24,10 +22,9 @@ const CreateLinkForm: React.FC<CreateLinkFormProps> = () => {
     }
     if (state.success) {
       toast.success('Link created successfully!');
+      navigate('/links');
     }
-  }, [state.success, state.error]);
-
-  console.log('CreateLinkForm render');
+  }, [state.success, state.error, navigate]);
 
   return (
     <form 

@@ -2,9 +2,7 @@ import { supabaseQuery } from "@/lib/supabase"
 import { CreateShortUrl } from "./types";
 
 export const getUrls = async () => {
-  const { data } = await supabaseQuery(query => query.from('url').select('*'));
-
-  return data;
+  return await supabaseQuery(query => query.from('url').select('*').order('created_at', { ascending: false }));
 }
 
 export const createShortUrl = async ({ title, longUrl, shortUrlId }: CreateShortUrl) => {

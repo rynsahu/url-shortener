@@ -17,3 +17,5 @@ export const SIDE_NAV_LINKS: SideNavList = [
     icon: '',
   }
 ];
+
+export const SHORT_URL_HOST = 'shortly.aryansahu.com';

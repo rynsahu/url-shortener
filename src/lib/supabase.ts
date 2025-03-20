@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { SupabaseResponse } from '@/types/supabase';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { toast } from 'sonner';
 
@@ -7,9 +8,9 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
 
 export const supabase = createClient(supabaseUrl, supabaseKey);
 
-export async function supabaseQuery<T>(
+export async function supabaseQuery(
   queryFunction: (query: SupabaseClient) => any
-): Promise<{ data: T | null; success: boolean; error: { code: string; message: string } }> {
+): Promise<SupabaseResponse> {
   try {
     const { data, error } = await queryFunction(supabase);
 
