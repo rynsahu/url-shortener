@@ -1,4 +1,5 @@
-import supabase from "@/lib/supabase"
+import supabase, { supabaseQuery } from "@/lib/supabase"
+import { AuthCredentials } from "./types";
 
 export const signUpUser = async () => {
   const data = supabase.auth.signInWithOtp({
@@ -6,4 +7,11 @@ export const signUpUser = async () => {
   })
 
   return data;
+}
+
+export const loginUser = async ({ email, password }: AuthCredentials) => {
+  return supabaseQuery(query => query.auth.signInWithPassword({
+    email: email,
+    password: password,
+  }));
 }

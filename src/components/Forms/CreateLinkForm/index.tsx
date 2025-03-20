@@ -2,7 +2,7 @@ import { Input } from "@/components/ui/input";
 import FormField from "../../ui/common/Form/FormField";
 import { Button } from "@/components/ui/button";
 import React, { useActionState, useEffect } from "react";
-import { createLink } from "./actions";
+import { createLinkAction } from "./actions";
 import { CREATE_LINK_FORM_FIELD, CreateLinkActionState } from "./types";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
@@ -13,23 +13,25 @@ const formInitialValues: CreateLinkActionState = {
 }
  
 const CreateLinkForm = () => {
-  const [state, createLinkAction, isPending] = useActionState<CreateLinkActionState, FormData>(createLink, formInitialValues);
+  const [state, createLinkFromAction, isPending] = useActionState<CreateLinkActionState, FormData>(createLinkAction, formInitialValues);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (state.success) {
       toast.success('Link created successfully!');
       navigate('/links');
+    } else if (state.message) {
+      toast.error(state.message);
     }
-  }, [state.success, navigate]);
+  }, [state.success, navigate, state.message]);
 
   return (
     <form 
       className="flex flex-col gap-6 p-6 border border-zinc-200 rounded-lg"
-      action={createLinkAction}
+      action={createLinkFromAction}
     >
       <FormField name={CREATE_LINK_FORM_FIELD.DESTINATION} label="Destination*">
-        <Input name={CREATE_LINK_FORM_FIELD.DESTINATION} />
+        <Input name={CREATE_LINK_FORM_FIELD.DESTINATION} type="ur" required/>
       </FormField>
 
       <FormField 
@@ -37,7 +39,7 @@ const CreateLinkForm = () => {
         label="Title"
         subText="(Optional)"
       >
-        <Input name={CREATE_LINK_FORM_FIELD.TITLE} />
+        <Input name={CREATE_LINK_FORM_FIELD.TITLE} type="text" />
       </FormField>
 
       <p className="font-bold text-xl">Short link</p>
@@ -58,8 +60,8 @@ const CreateLinkForm = () => {
         </FormField>
       </div>
 
-      <div className="flex gap-4 w-full mt-2">
-        <Button type="button" variant='outline' className="ml-auto">Cancel</Button>
+      <div className="flex justify-between gap-4 mt-2 ml-auto">
+        <Button type="button" variant='outline'>Cancel</Button>
         <Button type="submit" isLoading={isPending} >Create your link</Button>
       </div>
     </form>

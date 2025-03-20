@@ -1,3 +1,5 @@
+import React from "react";
+
 const AppLogo = () => {
   return (
     <div className="flex gap-2 rounded-lg flex items-center">
@@ -10,4 +12,4 @@ const AppLogo = () => {
   );
 }
  
-export default AppLogo;
+export default React.memo(AppLogo);
