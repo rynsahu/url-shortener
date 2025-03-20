@@ -17,14 +17,11 @@ const CreateLinkForm = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (state.error) {
-      toast.error(state.error.message);
-    }
     if (state.success) {
       toast.success('Link created successfully!');
       navigate('/links');
     }
-  }, [state.success, state.error, navigate]);
+  }, [state.success, navigate]);
 
   return (
     <form 

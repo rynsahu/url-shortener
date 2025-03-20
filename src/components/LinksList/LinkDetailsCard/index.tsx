@@ -6,7 +6,7 @@ import React from "react";
 import { Url } from "@/types/apiResponse";
 import { getShortUrl } from "@/lib/utils";
 
-const LinkDetailsCard = ({ data }: { data: Url }) => {
+const LinkDetailsCard = ({ link }: { link: Url }) => {
   return (
     <div className='flex gap-3 border border-zinc-200 p-6 rounded-lg w-full'>
       {/* Icon */}
@@ -18,10 +18,10 @@ const LinkDetailsCard = ({ data }: { data: Url }) => {
         <div className='flex gap-3 justify-between'>
           {/* Title */}
           <Link
-            to={`/links/${data.short_url_id}`}
+            to={`/links/${link.short_url_id}`}
             className='text-lg font-bold hover:underline line-clamp-1 break-all'
           >
-            {data.title || data.short_url_id}
+            {link.title || link.short_url_id}
           </Link>
           <LinkAction className='hidden lg:flex' />
         </div>
@@ -29,18 +29,18 @@ const LinkDetailsCard = ({ data }: { data: Url }) => {
         <div className='flex flex-col gap-1'>
           {/* Short URL */}
           <Link
-            to={getShortUrl(data.short_url_id).url}
+            to={getShortUrl(link.short_url_id).url}
             className='text-blue-500 hover:underline line-clamp-1 break-all'
             target="_blank"
           >
-            {getShortUrl(data.short_url_id).label}
+            {getShortUrl(link.short_url_id).label}
           </Link>
           {/* Long URL */}
           <Link
-            to={data.long_url}
+            to={link.long_url}
             className='text-zinc-600 hover:underline line-clamp-1 break-all'
           >
-            {data.long_url}
+            {link.long_url}
           </Link>
         </div>
 
