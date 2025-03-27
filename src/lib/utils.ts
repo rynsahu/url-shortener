@@ -27,3 +27,12 @@ export const getShortUrl = (shortUrlId: string) => {
     url: `https://${SHORT_URL_HOST}/${shortUrlId}`
   };
 };
+
+export const setUserLoggedIn = (isLoggedIn: boolean) => {
+  localStorage.setItem('isUserLoggedIn', JSON.stringify(isLoggedIn));
+}
+
+export const isUserLoggedIn = () => {
+  const isLoggedIn = localStorage.getItem('isUserLoggedIn');
+  return isLoggedIn ? JSON.parse(isLoggedIn) : false;
+}

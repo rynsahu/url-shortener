@@ -1,8 +1,18 @@
 import PrivateHeader from "@/components/ui/common/Header/PrivateHeader";
 import SideNav from "@/components/ui/common/SideNav";
-import { Outlet } from "react-router-dom";
+import { isUserLoggedIn } from "@/lib/utils";
+import { useEffect } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const PrivateLayout = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isUserLoggedIn()) {
+      navigate("/");
+    }
+  }, [navigate]);
+  
   return (
     <div className="private_layout flex">
       {/* ----- */}

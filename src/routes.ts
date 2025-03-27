@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         Component: PublicLayout,
         children: [
           { index: true, Component: LandingPage },
-          { path: 'sign-up',  Component: SignUpPage },
+          { path: 'signup',  Component: SignUpPage },
           { path: 'login', Component: LoginPage }
         ],
       },
