@@ -3,7 +3,7 @@ import { AuthCredentials } from "./types";
 import { setUserLoggedIn } from "@/lib/utils";
 
 export const signUpUser = async ({ email, password }: { email: string; password: string; }) => {
-  return supabaseQuery(query => query.auth.signUp({
+  return await supabaseQuery(query => query.auth.signUp({
     email,
     password,
   }));

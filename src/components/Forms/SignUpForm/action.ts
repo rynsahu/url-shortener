@@ -5,12 +5,10 @@ const signupAction = async(_: unknown, data: FormData): Promise<SignupActionStat
   const email = data.get(SIGNUP_FORM_FIELD.EMAIL) as string;
   const password = data.get(SIGNUP_FORM_FIELD.PASSWORD) as string;
 
-  console.log('Attempting signup with:', { email, password });
-
   if (!email || !password) {
     return { success: false, message: 'Email and password are required', error: null };
   }
-  console.log({ email, password });
+
   const { success, error } = await signUpUser({ email, password });
 
   if (!success) {

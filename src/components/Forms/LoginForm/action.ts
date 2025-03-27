@@ -5,8 +5,6 @@ const LoginAction = async(_: unknown, data: FormData): Promise<LoginActionState>
   const email = data.get(LOGIN_FORM_FIELD.EMAIL) as string;
   const password = data.get(LOGIN_FORM_FIELD.PASSWORD) as string;
 
-  console.log('Attempting login with:', { email, password });
-
   if (!email || !password) {
     return { success: false, message: 'Email and password are required', error: null };
   }

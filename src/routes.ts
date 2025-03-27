@@ -6,15 +6,21 @@ import PrivateLayout from './layouts/PrivateLayout';
 import HomePage from './pages/Home';
 import AnalyticsPage from './pages/Analytics';
 import LinksPage from './pages/Links';
+import ShortUrlIdPage from './pages/Links/ShortUrlId';
 import RootLayout from './layouts/RootLayout';
 import CreatePage from './pages/Create';
 import LoginPage from './pages/Login';
+import ShortUrlResolverPage from './pages/ShortUrlResolver';
 
 const router = createBrowserRouter([
   {
     path: '/',
     Component: RootLayout,
     children: [
+      {
+        path: ":shortUrlId",
+        Component: ShortUrlResolverPage, // This route is used to resolve short URLs. It should be the first route to match.
+      },
       // Public routes are accessible to non-logged-in users.
       {
         Component: PublicLayout,
@@ -34,7 +40,8 @@ const router = createBrowserRouter([
             path: 'links', 
             children: [
               { index: true, Component: LinksPage },
-              { path: 'create', Component: CreatePage }
+              { path: 'create', Component: CreatePage },
+              { path: ':shortUrlId', Component: ShortUrlIdPage }
             ] 
           },
         ],

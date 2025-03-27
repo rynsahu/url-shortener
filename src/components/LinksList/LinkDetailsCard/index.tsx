@@ -38,6 +38,7 @@ const LinkDetailsCard = ({ link }: { link: Url }) => {
           {/* Long URL */}
           <Link
             to={link.long_url}
+            target="_blank"
             className='text-zinc-600 hover:underline line-clamp-1 break-all'
           >
             {link.long_url}

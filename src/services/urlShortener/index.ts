@@ -10,3 +10,11 @@ export const createShortUrl = async ({ title, longUrl, shortUrlId }: CreateShort
     { 'title': title, 'long_url': longUrl, 'short_url_id': shortUrlId }
   ]));
 }
+
+export const getLongUrlByShortUrlId = async (shortUrlId: string) => {
+  return await supabaseQuery(query => query.from('url')
+    .select('long_url')
+    .eq('short_url_id', shortUrlId)
+    .single()
+  );
+}
