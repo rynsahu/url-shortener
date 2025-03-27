@@ -1,13 +1,13 @@
 import AppLogo from "@/components/AppLogo";
-import SignUp from "@/components/SignUp";
+import Login from "@/components/Login";
 
-const SignUpPage = () => {
+const LoginPage = () => {
   return (
     <div className="flex flex-col items-center gap-8 h-screen p-6 pt-[80px]">
       <AppLogo />
-      <SignUp />
+      <Login />
     </div>
   )
 }
 
-export default SignUpPage;
+export default LoginPage;

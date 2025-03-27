@@ -1,21 +1,21 @@
 import React from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../ui/card";
-import SignUpForm from "../Forms/SignUpForm";
+import LoginForm from "../Forms/LoginForm";
 
-const SignUp = () => {
+const Login = () => {
   return (
     <Card className="w-full max-w-[550px]">
       {/*  */}
       <CardHeader>
-        <CardTitle>Sign Up</CardTitle>
-        <CardDescription>Create your account to get started.</CardDescription>
+        <CardTitle>Log In</CardTitle>
+        <CardDescription>Access your account to continue.</CardDescription>
       </CardHeader>
       {/*  */}
       <CardContent>
-        <SignUpForm />
+        <LoginForm />
       </CardContent>
     </Card>
   );
 }
  
-export default React.memo(SignUp);
+export default React.memo(Login);
