@@ -8,6 +8,7 @@ import AnalyticsPage from './pages/Analytics';
 import LinksPage from './pages/Links';
 import RootLayout from './layouts/RootLayout';
 import CreatePage from './pages/Create';
+import LoginPage from './pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,8 @@ const router = createBrowserRouter([
         Component: PublicLayout,
         children: [
           { index: true, Component: LandingPage },
-          { path: 'sign-up',  Component: SignUpPage }
+          { path: 'sign-up',  Component: SignUpPage },
+          { path: 'login', Component: LoginPage }
         ],
       },
       // Privates routes are only accessible to logged-in users.
