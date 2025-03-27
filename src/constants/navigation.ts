@@ -18,4 +18,4 @@ export const SIDE_NAV_LINKS: SideNavList = [
   }
 ];
 
-export const SHORT_URL_HOST = 'shortly.aryansahu.com';
+export const SHORT_URL_HOST = 'localhost:5173';
