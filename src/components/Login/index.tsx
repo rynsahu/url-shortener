@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../ui/card";
 import LoginForm from "../Forms/LoginForm";
 import AppLogo from "../AppLogo";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -23,7 +24,7 @@ const Login = () => {
       </Card>
 
       <p className="text-sm">
-        Don't have an account? Please <a className="text-blue-500 hover:underline" href="/signup">Sign Up</a>.
+        Don't have an account? Please <Link className="text-blue-500 hover:underline" to="/signup">Sign Up</Link>.
       </p>
     </div>
   );

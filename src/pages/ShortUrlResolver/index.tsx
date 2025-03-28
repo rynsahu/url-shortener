@@ -21,7 +21,7 @@ const ShortUrlId = () => {
   }, [shortUrlId]);
 
   return (
-    <div className="h-screen text-sm p-4">Redirection...</div>
+    <div className="h-screen text-sm p-4">Redirecting...</div>
   );
 }
 
